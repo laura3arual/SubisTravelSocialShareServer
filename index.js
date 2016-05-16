@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 5000));
 app.get('/', function (req, res) {
     let model = {
         imageUrl : (req.query.url),
-        link: (req.query.link),
+        link: decodeURIComponent(req.query.link),
         title : req.query.title,
         description: req.query.desc
     };
