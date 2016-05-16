@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 5000));
 app.get('/', function (req, res) {
     let model = {
         imageUrl : req.query.url,
-        url: req.get('host') + req.url,
+        url: req.protocol + '://' + req.get('host') + req.originalUrl,
         link: (req.query.link),
         title : req.query.title,
         description: req.query.desc
