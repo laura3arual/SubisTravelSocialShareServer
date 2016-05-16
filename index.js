@@ -8,11 +8,16 @@ app.set('view engine', 'ejs');
 
 app.set('port', (process.env.PORT || 5000));
 
-// use res.render to load up an ejs view file
-
 // index page 
 app.get('/', function (req, res) {
-    res.render('index');
+    let model = {
+        imageUrl :  req.query.url,
+        link: req.query.link,
+        title : req.query.title,
+        description: req.query.desc
+    };
+   console.log(model);
+    res.render('index', {model});
 });
 
 app.listen(app.get('port'), function() {
