@@ -7,8 +7,8 @@
 <!-- Facebook META -->
 <meta property="fb:app_id" content="1094264387291101" />
 <meta name="og:url" property="og:url" content="<%=model.link %>" />
-<meta name="og:title" property="og:title" content="Subis Travel" />
-<meta name="og:description" property="og:description" content="Subis Travel" />
+<meta name="og:title" property="og:title" content="<%=model.title %>" />
+<meta name="og:description" property="og:description" content="<%=model.description %>" />
 <meta name="og:image" property="og:image" content="<%=model.imageUrl %>" />
 <meta name="og:type" property="og:type" content="website" />
 
@@ -22,6 +22,12 @@
 
 <body>
     <h1>Hola</h1>
+    
+<script>
+	setTimeout(function(){
+		window.location.href = '<%=model.link %>'; 
+	}, 1);
+</script>
 </body>
 
 </html>
