@@ -11,8 +11,9 @@ app.set('port', (process.env.PORT || 5000));
 // index page 
 app.get('/', function (req, res) {
     let model = {
-        imageUrl : (req.query.url),
-        link: decodeURIComponent(req.query.link),
+        imageUrl : req.query.url,
+        url: req.get('host') + req.url,
+        link: (req.query.link),
         title : req.query.title,
         description: req.query.desc
     };
